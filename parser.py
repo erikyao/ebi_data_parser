@@ -4,9 +4,10 @@ import json
 import sys
 import os.path
 from datetime import datetime
+from biothings.utils.dataload import open_anyfile
 
 def load_data(input_file):
-    with open(input_file) as in_f:
+    with open_anyfile(input_file) as in_f:
     
         # read all
         dt = list(csv.reader(in_f))

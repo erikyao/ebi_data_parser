@@ -8,6 +8,6 @@
     },
     "uploader" : {
         "parser" : "parser:load_data",
-        "ignore_duplicates" : false
+        "ignore_duplicates" : true
     }
 }

@@ -13,5 +13,5 @@ gene2phenotype data parser for BioThings Studio
 ## Resources
 
 * [Related Github Issue](https://github.com/biothings/mygene.info/issues/51)
-* [reactivesearch](https://github.com/appbaseio/reactivesearch)
-* [express](https://github.com/expressjs/express)
+* [EBI Data Source](https://www.ebi.ac.uk/gene2phenotype/downloads)
+* [BioThings Studio](http://docs.biothings.io/en/latest/doc/studio.html)

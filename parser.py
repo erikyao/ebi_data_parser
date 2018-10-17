@@ -63,7 +63,7 @@ def load_data(data_folder):
             result_dict[int(dt[x][12])]['gene2phenotype'] = list_gene
         else:
             dict_item = {
-                "_id": int(dt[x][12]),
+                "_id": dt[x][12],
                 "gene2phenotype": [dict_gene]
             }        
             result_dict[int(dt[x][12])] = dict_item

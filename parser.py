@@ -5,22 +5,15 @@ import sys
 import os.path
 from datetime import datetime
 
-if (len(sys.argv)!=4):
-    print ('python parser.py  <input_file1> <input_file2> <output_file>')
-    exit(1)    
+def load_data(data_folder):
 
-if not (os.path.exists(sys.argv[1])) or not (os.path.exists(sys.argv[2])):
-    print ('At least one file does not exist.')
-    exit(1)
-
-f1_name = sys.argv[1]
-f2_name = sys.argv[2]
-f3_name = sys.argv[3]
-
-def load_data(f1_name, f2_name, f3_name):
     # read two files
-    dt1 = list(csv.reader(open(f1_name)))
-    dt2 = list(csv.reader(open(f2_name)))
+    input_file_1 = os.path.join(data_folder,"CancerG2P.csv")
+    assert os.path.exists(input_file_1), "Can't find input file '%s'" % input_file_1
+    input_file_2 = os.path.join(data_folder,"DDG2P.csv")
+    assert os.path.exists(input_file_2), "Can't find input file '%s'" % input_file_2
+    dt1 = list(csv.reader(open(input_file_1)))
+    dt2 = list(csv.reader(open(input_file_2)))
 
     # clean data
     props_names = dt1[0]
@@ -38,7 +31,6 @@ def load_data(f1_name, f2_name, f3_name):
     dt = dt1_header_removed + dt2_header_removed
 
     # parse and ignore empty data
-    from datetime import datetime
 
     result_dict={} # intermediate dict construct, with unique ids
 
@@ -76,11 +68,17 @@ def load_data(f1_name, f2_name, f3_name):
             }        
             result_dict[int(dt[x][12])] = dict_item
             
-    result_list = list(result_dict.values())
+    return list(result_dict.values())
+
+if __name__ == "__main__":
+
+    if (len(sys.argv)!=2):
+        print ('python parser.py <output_file>')
+        exit(1)
+
+    result_list = load_data(os.getcwd())
 
     # save to a file
-    file = io.open(f3_name,"w",encoding='utf8')
+    file = io.open(sys.argv[1], "w", encoding='utf8')
     file.write(json.dumps(result_list, indent=4, sort_keys=True, default=str))
     file.close()
-
-load_data(f1_name, f2_name, f3_name)

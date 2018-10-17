@@ -1,0 +1,13 @@
+{
+    "version": "0.1",
+    "dumper" : {
+        "data_url" : [
+            "http://localhost:8085/CancerG2P.csv.gz",
+            "http://localhost:8085/DDG2P.csv.gz"],
+        "uncompress" : true
+    },
+    "uploader" : {
+        "parser" : "parser:load_data",
+        "on_duplicates" : "ignore"
+    }
+}

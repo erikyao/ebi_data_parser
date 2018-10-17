@@ -68,7 +68,8 @@ def load_data(data_folder):
             }        
             result_dict[int(dt[x][12])] = dict_item
             
-    return list(result_dict.values())
+    for v in result_dict.values():
+        yield v
 
 if __name__ == "__main__":
 
@@ -76,7 +77,9 @@ if __name__ == "__main__":
         print ('python parser.py <output_file>')
         exit(1)
 
-    result_list = load_data(os.getcwd())
+    result_list = []
+    for r in load_data(os.getcwd()):
+        result_list.append(r)
 
     # save to a file
     file = io.open(sys.argv[1], "w", encoding='utf8')

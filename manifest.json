@@ -1,10 +1,11 @@
 {
-    "version": "0.1",
+    "version": "0.2",
     "dumper" : {
         "data_url" : [
-            "http://localhost:8085/CancerG2P.csv.gz",
-            "http://localhost:8085/DDG2P.csv.gz"],
-        "uncompress" : true
+            "https://www.ebi.ac.uk/gene2phenotype/downloads/CancerG2P.csv.gz",
+            "https://www.ebi.ac.uk/gene2phenotype/downloads/DDG2P.csv.gz"],
+        "uncompress" : true,
+        "release" : "version:get_release"
     },
     "uploader" : {
         "parser" : "parser:load_data",

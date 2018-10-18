@@ -17,6 +17,10 @@ def load_data(data_folder):
 
     # clean data
     props_names = dt1[0]
+
+    for i, name in enumerate(props_names):
+        props_names[i] = name.replace(' ', '_')
+
     dt1_header_removed = dt1[1:]
     dt2_header_removed = dt2[1:]
 

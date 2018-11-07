@@ -9,10 +9,7 @@ def get_release(self):
     for url in self.__class__.SRC_URLS:
         res = self.client.head(url, allow_redirects=True)
         header = res.headers['Content-Disposition']
-        print(header)
         match = date_pattern.findall(header)
-	# test
-        print(match)
         assert len(match) == 1, "Parser Date Extraction Error"
         dates.append(datetime.strptime(match[0], '%d_%m_%Y').date())
 

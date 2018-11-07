@@ -5,6 +5,7 @@ gene2phenotype data parser for BioThings Studio
 ## Branches
  - master: process two files in the data source altogether
  - single_file: process one file of the same format with the name provided in CLI
+ - dev: the same as master branch as of 11/6/2018 except that it does not contain test utilities
  
 ## CLI (for master branch parser)
 

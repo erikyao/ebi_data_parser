@@ -1,8 +1,7 @@
-import re
-from datetime import datetime
-
 def get_release(self):
-
+    import re
+    from datetime import datetime
+    
     dates = []
     date_pattern = re.compile(r'\d{1,2}_\d{1,2}_\d{4}')
 

@@ -57,7 +57,8 @@ def load_data(data_folder):
                 elif (y==12):
                     continue
                 elif (y==13):
-                    dict_gene[props_names[y]] = datetime.strptime(dt[x][y], '%Y-%m-%d %H:%M:%S').isoformat()
+                    if dt[x][y] != 'No date':
+                        dict_gene[props_names[y]] = datetime.strptime(dt[x][y], '%Y-%m-%d %H:%M:%S').isoformat()
                 else:
                     dict_gene[props_names[y]] = dt[x][y]
         

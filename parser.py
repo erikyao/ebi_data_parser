@@ -8,9 +8,9 @@ from datetime import datetime
 def load_data(data_folder):
 
     # read two files
-    input_file_1 = os.path.join(data_folder,"CancerG2P.csv")
+    input_file_1 = os.path.join(data_folder,"CancerG2P_19_2_2020.csv")
     assert os.path.exists(input_file_1), "Can't find input file '%s'" % input_file_1
-    input_file_2 = os.path.join(data_folder,"DDG2P.csv")
+    input_file_2 = os.path.join(data_folder,"DDG2P_19_2_2020.csv")
     assert os.path.exists(input_file_2), "Can't find input file '%s'" % input_file_2
     dt1 = list(csv.reader(open(input_file_1)))
     dt2 = list(csv.reader(open(input_file_2)))

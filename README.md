@@ -1,15 +1,18 @@
-# ebi-data-parser
+## Original Plugin Name: `ebi-data-parser`
 
-gene2phenotype data parser for BioThings Studio
+`gene2phenotype` data parser for BioThings Studio
 
 ## Branches
+
  - master: process two files in the data source altogether
  - single_file: process one file of the same format with the name provided in CLI
  - dev: the same as master branch as of 11/6/2018 except that it does not contain test utilities
  
 ## CLI (for master branch parser)
 
-    python3 parser.py outputfile.txt
+```bash
+python3 parser.py outputfile.txt
+```
     
 ## Resources
 
